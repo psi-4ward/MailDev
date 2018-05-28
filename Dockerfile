@@ -12,8 +12,6 @@ WORKDIR /usr/src/app
 ADD . /usr/src/app/
 
 RUN npm install --production && \
-    npm prune && \
-    npm cache clean && \
     rm -rf /tmp/*
 
 ADD . /usr/src/app/
