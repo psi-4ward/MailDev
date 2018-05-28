@@ -13,7 +13,7 @@ ADD . /usr/src/app/
 
 RUN npm install --production && \
     npm prune && \
-    npm cache clean \
+    npm cache clean && \
     rm -rf /tmp/*
 
 ADD . /usr/src/app/
