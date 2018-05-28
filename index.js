@@ -1,4 +1,3 @@
-
 /**
  * MailDev - index.js
  *
@@ -12,6 +11,7 @@ const pkg = require('./package.json')
 const web = require('./lib/web')
 const mailserver = require('./lib/mailserver')
 const logger = require('./lib/logger')
+const configDefaults = require('./lib/config')
 
 module.exports = function (config) {
   const version = pkg.version
@@ -20,9 +20,9 @@ module.exports = function (config) {
     // CLI
     config = program
       .version(version)
-      .option('-s, --smtp <port>', 'SMTP port to catch emails [1025]', '1025')
-      .option('-w, --web <port>', 'Port to run the Web GUI [1080]', '1080')
-      .option('--ip <ip address>', 'IP Address to bind SMTP service to', '0.0.0.0')
+      .option('-s, --smtp <port>', 'SMTP port to catch emails [1025]')
+      .option('-w, --web <port>', 'Port to run the Web GUI [1080]')
+      .option('--ip <ip address>', 'IP Address to bind SMTP service to')
       .option('--outgoing-host <host>', 'SMTP host for outgoing emails')
       .option('--outgoing-port <port>', 'SMTP port for outgoing emails')
       .option('--outgoing-user <user>', 'SMTP user for outgoing emails')
@@ -46,6 +46,8 @@ module.exports = function (config) {
       .option('--silent')
       .parse(process.argv)
   }
+
+  config = Object.assign({}, configDefaults, config)
 
   if (config.verbose) {
     logger.setLevel(2)
