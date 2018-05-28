@@ -1,13 +1,11 @@
 # MailDev
 
-[![Build Status](https://api.travis-ci.org/djfarrelly/MailDev.svg)](https://travis-ci.org/djfarrelly/MailDev)
-[![codecov](https://codecov.io/gh/djfarrelly/MailDev/branch/master/graph/badge.svg)](https://codecov.io/gh/djfarrelly/MailDev)
-[![NPM Version](https://img.shields.io/npm/v/maildev.svg)](https://www.npmjs.com/package/maildev)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+***FORK of https://github.com/djfarrelly/MailDev***
 
-**MailDev** is a simple way to test your project's generated emails during development with an easy to use web interface that runs on your machine built on top of [Node.js](http://www.nodejs.org).
+Additional features:
+* Config using ENV-Vars
 
-![MailDev Screenshot](https://github.com/djfarrelly/MailDev/blob/gh-pages/images/screenshot-2015-03-29.png?raw=true)
+![MailDev Screenshot](https://github.com/psi-4ward/MailDev/blob/gh-pages/images/screenshot-2015-03-29.png?raw=true)
 
 ## Install & Run
 
@@ -15,13 +13,12 @@
     $ maildev
 
 If you want to use MailDev with [Docker](https://www.docker.com/), you can use the
-[**djfarrelly/maildev** image on Docker Hub](https://registry.hub.docker.com/u/djfarrelly/maildev/).
+[**psi-4ward/maildev** image on Docker Hub](https://registry.hub.docker.com/u/psi-4ward/maildev/).
 For a guide for usage with Docker,
-[checkout the docs](https://github.com/djfarrelly/MailDev/blob/master/docs/docker.md).
+[checkout the docs](https://github.com/psi-4ward/MailDev/blob/master/docs/docker.md).
 
-    $ docker run -p 1080:80 -p 1025:25 djfarrelly/maildev
+    $ docker run -p 1080:80 -p 1025:25 psi-4ward/maildev
 
-For convenient use with Grunt, try [grunt-maildev](https://github.com/xavierpriour/grunt-maildev).
 
 ## Usage
 
@@ -55,7 +52,7 @@ For convenient use with Grunt, try [grunt-maildev](https://github.com/xavierprio
 ## API
 
 MailDev can be used in your Node.js application. For more info view the
-[API docs](https://github.com/djfarrelly/MailDev/blob/master/docs/api.md).
+[API docs](https://github.com/psi-4ward/MailDev/blob/master/docs/api.md).
 
 ```javascript
 const MailDev = require('maildev')
@@ -70,7 +67,7 @@ maildev.on('new', function (email) {
 ```
 
 MailDev also has a **REST API**. For more info
-[view the docs](https://github.com/djfarrelly/MailDev/blob/master/docs/rest.md).
+[view the docs](https://github.com/psi-4ward/MailDev/blob/master/docs/rest.md).
 
 ## Outgoing email
 
@@ -170,45 +167,7 @@ config.action_mailer.delivery_method = :smtp
 
 ## Ideas
 
-If you're using MailDev and you have a great idea, I'd love to hear it. If you're not using MailDev because it lacks a feature, I'd love to hear that too. Add an issue to the repo [here](https://github.com/djfarrelly/MailDev/issues/new) or contact me on [twitter](http://www.twitter.com/djfarrelly).
-
-## Contributing
-
-Any help on MailDev would be awesome. There is plenty of room for improvement. Feel free to [create a Pull Request](https://github.com/djfarrelly/MailDev/issues/new) from small to big changes.
-
-To run **MailDev** during development:
-
-    npm install
-    npm run dev
-
-The "dev" task will run MailDev using nodemon and restart automatically when
-changes are detected. On `*.scss` file save, the css will also be recompiled.
-Using `test/send.js`, a few test emails will be sent every time the application
-restarts.
-
-The project uses the [JavaScript Standard coding style](https://standardjs.com).
-To lint your code before submitting your PR, run `npm run lint`.
-
-To run the test suite:
-
-    $ npm test
-
-## [Changelog](https://github.com/djfarrelly/MailDev/releases)
-
-## Thanks
-
-**MailDev** is built on using great open source projects including
-[Express](http://expressjs.com),
-[AngularJS](http://angularjs.org/),
-[Font Awesome](http://fontawesome.io/) and two great projects from
-[Andris Reinman](https://github.com/andris9):
-[smtp-server](https://github.com/nodemailer/smtp-server)
-and [mailparser](https://github.com/nodemailer/mailparser).
-Many thanks to Andris as his projects are the backbone of this app and to
-[MailCatcher](http://mailcatcher.me/) for the inspiration.
-
-Additionally, thanks to all the awesome [contributors](https://github.com/djfarrelly/MailDev/graphs/contributors)
-to the project.
+If you're using MailDev and you have a great idea, I'd love to hear it. If you're not using MailDev because it lacks a feature, I'd love to hear that too. Add an issue to the repo [here](https://github.com/psi-4ward/MailDev/issues/new) or contact me on [twitter](http://www.twitter.com/psitrax).
 
 ## License
 
